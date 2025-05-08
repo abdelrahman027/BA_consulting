@@ -14,7 +14,7 @@ const About = () => {
         </div>
 
         <div className='flex flex-wrap items-center justify-center gap-4 md:justify-between pt-4 md:pt-8 '>
-            <div className='max-w-[600px]text-base md:text-xl lg:text-2xl'>حلم السفر لم يعد مجرد فكرة تراودك، بل هو الخطوة الأولى نحو بناء مستقبل تستحقه. ومع التخطيط للمستقبل بطريقة صحيحة ومدروسة، تتحول كل لحظة انتظار إلى خطوة أقرب نحو النجاح. نحن هنا لنثبت لك أن حلم اليوم هو واقع الغد إذا امتلكت الشجاعة لتبدأ. لا تدع الفرص تمر أمامك، فبوابتك نحو الدراسة العالمية أصبحت أقرب مما تظن. انطلق بثقة، ودعنا نساعدك في تحويل حلمك إلى إنجاز حقيقي يغير حياتك.</div>
+            <div className='max-w-[600px] text-base md:text-xl lg:text-2xl'>حلم السفر لم يعد مجرد فكرة تراودك، بل هو الخطوة الأولى نحو بناء مستقبل تستحقه. ومع التخطيط للمستقبل بطريقة صحيحة ومدروسة، تتحول كل لحظة انتظار إلى خطوة أقرب نحو النجاح. نحن هنا لنثبت لك أن حلم اليوم هو واقع الغد إذا امتلكت الشجاعة لتبدأ. لا تدع الفرص تمر أمامك، فبوابتك نحو الدراسة العالمية أصبحت أقرب مما تظن. انطلق بثقة، ودعنا نساعدك في تحويل حلمك إلى إنجاز حقيقي يغير حياتك.</div>
             <div className='md:overflow-hidden rounded-lg'>
                 <iframe className=' text-center w-[350px] md:w-[400px] lg:w-[600px] aspect-video rounded-lg' src="https://www.youtube.com/embed/BHRa5T8kmBo?si=aCaYGTai8Yd-xzS3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
