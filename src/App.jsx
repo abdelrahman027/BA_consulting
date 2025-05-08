@@ -44,8 +44,21 @@ const App = () => {
           </div>
         </div>
       </div>
-      <div className='container'>
-        section2
+      <div className='container p-8 md:pt-12'>
+        <div className='flex items-center justify-start gap-2'>
+          <button className='md:px-6 m:py-4  px-4 py-2 text-base md:text-xl rounded-full bg-orange-500 hover:bg-orange-600 text-white'>
+              أستكشف وجهاتنا
+            </button>
+            <h2 className='text-base md:text-xl font-bold'>
+                 ابدأ رحلتك لأحدي 
+              <span className='text-sky-500'> افضل وجهاتنا  </span>
+            </h2>
+        </div>
+        <div className="destinations flex flex-wrap items-center justify-between gap-4 pt-8 md:12">
+            <div>COuntry</div>
+            <div>COuntry</div>
+            <div>COuntry</div>
+        </div>
       </div>
     </div>
   )
