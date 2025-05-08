@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.homeDiv {
+  background-size: cover  ;
+  background-image: url(/Home.jpg);
+}
+
+.HomeGrad {
+  background: #10410F;
+  background: linear-gradient(0deg,rgba(16, 65, 15, 1) 0%, rgba(172, 17, 78, 1) 100%, rgba(52, 43, 65, 1) 100%);
+}
+
+.container {
+  padding-left: 100px;
+  padding-right: 100px;
+}
