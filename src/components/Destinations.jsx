@@ -49,7 +49,7 @@ const Destinations = () => {
 
       {/* Destination Cards Grid */}
       <motion.div 
-        className="flex flex-wrap items-center justify-between gap-8 pt-8 md:pt-12"
+        className="flex flex-wrap items-center justify-center lg:justify-between gap-8 pt-8 md:pt-12"
         initial="hidden"
         animate="visible"
         variants={{

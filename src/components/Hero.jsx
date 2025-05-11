@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
   return (
-    <div className='homeDiv w-screen h-screen relative overflow-hidden'>
+    <div className='homeDiv w-screen h-screen relative overflow-hidden flex flex-col items-center justify-center'>
       {/* Background Gradient */}
       <motion.div 
         className='HomeGrad opacity-70 h-full w-full absolute top-0 left-0' 

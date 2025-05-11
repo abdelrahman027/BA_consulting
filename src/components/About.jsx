@@ -1,12 +1,42 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
+
+// Custom Count-Up Hook
+const useCountUp = (endValue, duration = 2000, start = false) => {
+  const [count, setCount] = useState(0);
+  const [isComplete, setIsComplete] = useState(false);
+
+  useEffect(() => {
+    if (!start || isComplete) return;
+
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      const value = Math.floor(progress * endValue);
+      setCount(value);
+      
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        setIsComplete(true);
+      }
+    };
+
+    window.requestAnimationFrame(step);
+  }, [endValue, duration, start, isComplete]);
+
+  return count;
+};
 
 const About = () => {
   const videoRef = useRef(null);
+  const statsRef = useRef(null);
   const isInView = useInView(videoRef, { once: true, margin: "-100px" });
+  const isStatsVisible = useInView(statsRef, { once: true });
 
   return (
-    <div className='container p-8 md:pt-12'>
+    <div className='container p-8 md:pt-12 bg-gray-200 rounded-lg'>
       {/* Header Section */}
       <motion.div 
         className='flex items-center justify-start gap-2 mb-8'
@@ -18,10 +48,8 @@ const About = () => {
           className='md:px-6 px-4 py-2 text-base md:text-xl rounded-full bg-orange-500 hover:bg-orange-600 text-white transition-all duration-300'
           whileHover={{ scale: 1.05, boxShadow: "0 0 15px rgba(255, 165, 0, 0.4)" }}
           whileTap={{ scale: 0.98 }}
-        ><a href="
-          https://boost-abroad.com/about-us/">
-          أعرف المزيد عنا
-          </a>
+        >
+          <a href="https://boost-abroad.com/about-us/">أعرف المزيد عنا</a>
         </motion.button>
         <motion.h2 
           className='text-base md:text-xl font-bold'
@@ -52,7 +80,7 @@ const About = () => {
       >
         {/* Text Content */}
         <motion.p 
-          className='max-w-[600px] text-base md:text-xl lg:text-2xl'
+          className='max-w-[600px] text-base md:text-xl lg:text-2xl text-black'
           variants={{
             hidden: { opacity: 0, x: -50 },
             visible: { 
@@ -63,7 +91,6 @@ const About = () => {
           }}
         >
           حلم السفر لم يعد مجرد فكرة تراودك، بل هو الخطوة الأولى نحو بناء مستقبل تستحقه. ومع التخطيط للمستقبل بطريقة صحيحة ومدروسة، تتحول كل لحظة انتظار إلى خطوة أقرب نحو النجاح. نحن هنا لنثبت لك أن حلم اليوم هو واقع الغد إذا امتلكت الشجاعة لتبدأ. لا تدع الفرص تمر أمامك، فبوابتك نحو الدراسة العالمية أصبحت أقرب مما تظن. انطلق بثقة، ودعنا نساعدك في تحويل حلمك إلى إنجاز حقيقي يغير حياتك.
-
         </motion.p>
 
         {/* Video Section (Animated on View) */}
@@ -94,6 +121,7 @@ const About = () => {
       
       {/* Stats Section */}
       <motion.div 
+        ref={statsRef}
         className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-16"
         initial="hidden"
         animate="visible"
@@ -107,30 +135,46 @@ const About = () => {
           { title: "15+", desc: "سنة خبرة في مجال الاستشارات التعليمية" },
           { title: "3000+", desc: "طالب ساعدناهم في تحقيق أحلامهم" },
           { title: "20+", desc: "وجهة دراسية حول العالم" }
-        ].map((stat, index) => (
-          <motion.div 
-            key={index}
-            className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 text-center"
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { 
-                opacity: 1, 
-                y: 0,
-                transition: { type: "spring", stiffness: 100, damping: 12 }
-              }
-            }}
-            whileHover={{ 
-              y: -5,
-              backgroundColor: "rgba(255, 255, 255, 0.08)",
-              transition: { duration: 0.3 }
-            }}
-          >
-            <motion.p className="text-3xl font-bold text-orange-500">{stat.title}</motion.p>
-            <p className="text-white mt-2">{stat.desc}</p>
-          </motion.div>
-        ))}
+        ].map((stat, index) => {
+          // Extract numeric value and suffix
+          const numericValue = parseInt(stat.title);
+          const suffix = stat.title.replace(numericValue, '');
+          const count = useCountUp(numericValue, 2000, isStatsVisible);
+
+          return (
+            <motion.div 
+              key={index}
+              className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 text-center"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { 
+                  opacity: 1, 
+                  y: 0,
+                  transition: { type: "spring", stiffness: 100, damping: 12 }
+                }
+              }}
+              whileHover={{ 
+                y: -5,
+                backgroundColor: "rgba(255, 255, 255, 0.08)",
+                transition: { duration: 0.3 }
+              }}
+            >
+              <motion.p 
+                className="text-3xl font-bold text-orange-500"
+                aria-live="polite"
+              >
+                {count}{suffix}
+              </motion.p>
+              <p className="text-gray-800 mt-2">{stat.desc}</p>
+            </motion.div>
+          );
+        })}
       </motion.div>
+
+     
     </div>
+
+    
   );
 };
 
