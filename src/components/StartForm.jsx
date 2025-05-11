@@ -76,7 +76,7 @@ const StartForm = () => {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
         >
-          <h3 className="text-2xl font-bold text-white mb-4">القسم السادس: نموذج التسجيل</h3>
+          <h3 className="text-2xl font-bold text-white mb-4"> نموذج التسجيل</h3>
 
           <form className="space-y-4" onSubmit={handleSubmit}>
             {/* Full Name */}
