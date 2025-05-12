@@ -31,7 +31,7 @@ const StartForm = () => {
     setSuccess(false);
 
     try {
-      const response = await fetch('http://localhost:8000/api/boost_abroad_consulting_form/', {
+      const response = await fetch('https://boostlab-v0-1.onrender.com/api/boost_abroad_consulting_form/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
