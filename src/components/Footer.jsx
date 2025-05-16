@@ -4,18 +4,18 @@ import { motion } from 'framer-motion';
 import { 
   FaFacebookF, 
   FaInstagram, 
-  FaTwitter, 
+  FaTiktok, 
   FaLinkedinIn,
-  FaWhatsapp
+  FaYoutube
 } from 'react-icons/fa';
 
 const Footer = () => {
   const socialLinks = [
-    { name: 'Facebook', icon: <FaFacebookF />, url: '#' },
-    { name: 'Instagram', icon: <FaInstagram />, url: '#' },
-    { name: 'Twitter', icon: <FaTwitter />, url: '#' },
-    { name: 'LinkedIn', icon: <FaLinkedinIn />, url: '#' },
-    { name: 'WhatsApp', icon: <FaWhatsapp />, url: '#' }
+    { name: 'Facebook', icon: <FaFacebookF />, url: 'https://www.facebook.com/share/198z6aKeAs/?mibextid=wwXIfr' },
+    { name: 'Instagram', icon: <FaInstagram />, url: 'https://www.instagram.com/boost_abroad/' },
+    { name: 'Tiktok', icon: <FaTiktok />, url: 'https://www.tiktok.com/@boost.abroad?_t=ZS-8wOhaffGvVx&_r=1' },
+    { name: 'LinkedIn', icon: <FaLinkedinIn />, url: 'https://www.linkedin.com/company/boost-abroad/' },
+    { name: 'YouTube', icon: <FaYoutube />, url: 'http://www.youtube.com/@boostabroad' }
   ];
 
   return (
