@@ -21,7 +21,7 @@ const Hero = () => {
           transition={{ type: "spring", stiffness: 100, damping: 15 }}
         >
           <motion.h1 
-            className='text-white text-xl md:text-4xl font-bold'
+            className='text-white animate-bounce text-xl md:text-4xl font-bold'
             initial={{ scale: 0.8 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.2 }}
@@ -53,9 +53,12 @@ const Hero = () => {
             احصل على استشارتك المجانية الآن مع فريقنا المتخصص! 
             بخبرة تفوق 15 عامًا في مجال استشارات الدراسة بالخارج، نحن هنا لمساعدتك في تحقيق حلمك.
           </motion.h2>
+
           
+
+
           <motion.button 
-            className='md:px-6 m:py-4 px-4 py-2 text-base md:text-xl rounded-full bg-orange-500 hover:bg-orange-600 transition-colors duration-300'
+            className='md:px-6 m:py-4 px-4 py-2 text-base md:text-xl rounded-full bg-orange-500 hover:bg-orange-600 transition-colors duration-300 '
             whileHover={{ 
               scale: 1.05,
               boxShadow: "0px 0px 15px rgba(255, 165, 0, 0.5)"
@@ -65,11 +68,14 @@ const Hero = () => {
             animate={{ scale: 1 }}
             transition={{ delay: 1.2, type: "spring", stiffness: 200 }}
           >
-            <a target='_blank' href="https://boost-abroad.com/contact-us/">
+            <a href="#submitForm">
             أبدأ الأن
            </a>
             
           </motion.button>
+
+
+        
         </motion.div>
 
         {/* Stats & Images */}

@@ -67,6 +67,7 @@ const StartForm = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
+      id='submitForm'
     >
       <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto bg-gray-900/80 backdrop-blur-lg p-6 md:p-10 rounded-2xl border border-white/10">
         {/* Left Column - Form */}
