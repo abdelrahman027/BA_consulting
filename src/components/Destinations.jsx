@@ -37,13 +37,13 @@ const Destinations = () => {
     },
     {
       name: "فرنسا",
-      region: "فرنسا",
+      region: "أوروبا",
       image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJhbmNlfGVufDB8fDB8fHww",
       icon: "https://boost-abroad.com/media/images/France_flag.original.png",
     },
     {
       name: "ماليزيا",
-      region: "ماليزيا",
+      region: "أسيا",
       image: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFsYXlzaWF8ZW58MHx8MHx8fDA%3D",
       icon: "https://boost-abroad.com/media/images/Malaysia_flag.original.png",
     },
@@ -71,7 +71,7 @@ const Destinations = () => {
   return controls.stop;
  }, [width,xTransition,duration])
   return (
-    <div className="container mb-36 p-8 md:pt-12">
+    <div className="container mb-36 p-8 md:pt-12 edits">
       {/* Title Section with Animation */}
       <motion.div
         className="flex items-center justify-start gap-2 mb-8"
