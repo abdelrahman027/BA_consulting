@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 
+body {
+  overflow-x: hidden;
+}
+
 .homeDiv {
   background-size: cover  ;
   background-image: url(/Home.jpg);
