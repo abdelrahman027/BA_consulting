@@ -8,7 +8,7 @@ import { Analytics } from "@vercel/analytics/react"
 
 const App = () => {
   return (
-    <div className='overflow-x-hidden flex flex-col items-center justify-center'>
+    <div className='overflow-x-hidden w-screen relative flex flex-col items-center justify-center'>
       <Analytics />
       <Hero />
       <Destinations />

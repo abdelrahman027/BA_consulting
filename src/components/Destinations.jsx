@@ -59,7 +59,7 @@ const Destinations = () => {
  const  xTransition = useMotionValue(0)
  useEffect(() => {
   let controls;
-  let finalPosition =-width/2-8;
+  let finalPosition =-width/2;
   controls = animate(xTransition,[0,finalPosition],{
     ease:"linear",
     duration:duration,
@@ -114,7 +114,7 @@ const Destinations = () => {
       {/* Destination Cards Grid */}
       <motion.div
         // className="flex flex-wrap items-center justify-center lg:justify-between gap-8 pt-8 md:pt-12"
-        className="absolute left-0 flex gap-4"
+        className="absolute left-0 flex gap-4 modiv"
         initial="hidden"
         animate="visible"
         ref={ref}

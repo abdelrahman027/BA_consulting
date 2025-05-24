@@ -3,9 +3,15 @@
 @tailwind utilities;
 
 
-body {
+html {
   overflow-x: hidden;
 }
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 
 .homeDiv {
   background-size: cover  ;
